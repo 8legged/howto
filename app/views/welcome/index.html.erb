@@ -1,0 +1,5 @@
+<h4>Welcome</h4>
+Tasks (<a href="<%= tasks_path %>"><%= Task.count %></a>)<br />
+add [<%= link_to "+", new_task_path %>]<br /><br />
+
+A total of <%= pluralize(Step.count, "step") %> has been created.

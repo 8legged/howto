@@ -1,0 +1,45 @@
+<%#= tweet.author.downcase %>
+  <%#= highlight(simple_format(word_wrap(truncate(tweet.body, length: 80) { link_to "(read more)", tweet })), @query) %>
+<table>
+  <tr>
+    <td><%= link_to "[All Tasks]", tasks_path %></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Created on <%= @task.created_at.getlocal.strftime("%D") %></td>
+  </tr>
+  <tr>
+    <td>add step [<%= link_to "+", new_task_step_path(@task) %>]</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+    <th></th>
+    <th><h4><%= @task.title %></h4></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>edit </td>
+    <td>delete</td>
+    <td></td>
+  </tr>
+  <tr>
+    <% @task.steps.each do |step| %>
+    <td><%= step.title %></td>
+    <td></td>
+    <td>[!]
+    </td>
+    <td></td>
+    <td><%= link_to "[x]", task_step_path(@task, step), action: "delete", method: :delete, data: { confirm: "Are you sure?" } %></td>
+
+  </tr>
+  <% end %>
+</table>

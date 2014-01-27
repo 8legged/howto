@@ -1,0 +1,4 @@
+<%= link_to "[All Tasks]", tasks_path %><br />
+add step [<%= link_to "+", new_task_step_path %>]<br /><br />
+Task: <%= link_to @task.title, task_path(@task) %>
+now has (<%= pluralize(@task.steps.count, "step") %>)

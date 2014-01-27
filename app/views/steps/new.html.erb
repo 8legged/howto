@@ -1,0 +1,7 @@
+<h1>Create a new step...</h1>
+
+<%= form_for [@task, @step] do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+<%= f.submit "Submit" %>
+<% end %>
